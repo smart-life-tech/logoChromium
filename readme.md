@@ -20,7 +20,7 @@ Welcome to the setup guide for creating a splash screen on your Raspberry Pi to 
 Clone this repository to your Raspberry Pi.
 
 ```bash
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/smart-life-tech/logoChromium.git
 cd your-repo
 ```
 
@@ -51,10 +51,7 @@ sudo apt install chromium-browser
 ```
 
 ### 7. Launch Chromium in Kiosk Mode
-
-```bash
-Modify the start-chromium.sh script:
-```
+**modify the startup script**
 ```bash
 nano /home/pi/start-chromium.sh
 ```
