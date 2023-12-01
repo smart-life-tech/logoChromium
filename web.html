@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Splash Screen</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+        }
+        #container {
+            position: relative;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-74%, -5%);
+            text-align: center;
+            
+        }
+        input {
+            transform: translate(-6%, -5%);
+            margin-top: 20px;
+            padding: 10px;
+            width: 170%;
+            height: 55px;
+            max-width: 400px;
+            background-color:orange;
+            color: #fff;
+            border: none; /* Remove the border <input type="submit" value="Go">*/
+            outline: none; /* Remove the input focus outline */
+            border-radius: 25px; /* Set the border-radius for an oval shape */
+        }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus {
+            -webkit-text-fill-color: #fff !important; /* Set text color to white */
+            box-shadow: 0 0 0px 1000px orange inset; /* Set background color to transparent */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="logo.png" alt="Logo">
+        <form action="javascript:void(0);" onsubmit="loadWebsite(event)">
+            <input type="url" id="websiteInput" placeholder="Enter Website URL" required>
+            
+        </form>
+    </div>
+    <script>
+        function loadWebsite(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            var url = document.getElementById('websiteInput').value;
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
