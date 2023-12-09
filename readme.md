@@ -93,4 +93,4 @@ Restart the Wi-Fi interface:
 ```bash
 sudo ifdown wlan0
 sudo ifup wlan0
-````![Alt text](image.png)
+```
