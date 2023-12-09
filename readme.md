@@ -50,34 +50,47 @@ sudo apt update
 sudo apt install chromium-browser
 ```
 
-### 7. Launch Chromium in Kiosk Mode
-**modify the startup script**
-```bash
-nano /home/pi/start-chromium.sh
-```
-```bash
-#!/bin/bash
-unclutter -idle 0.1 -root &
-chromium-browser --disable-infobars --kiosk --noerrdialogs --disable-session-crashed-bubble --disable-breakpad --disable-pinch --overscroll-history-navigation=0 --disable-features=TranslateUI --disable-software-rasterizer --disable-print-preview --disable-extensions --disable-restore-session-state --disable-sync --no-first-runweb.html
-```
+#enter this on the pi termial 
 
-### 8. Test the Setup
-
-Reboot your Raspberry Pi and check if the splash screen is displayed on both screens.
+`sudo nano /etc/xdg/lxsession/LXDE-pi/autostart`
+And add this to the last part :
 
 ```bash
-sudo reboot
+@xset s off
+@xset -dpms
+@xset s noblank
+@chromium-browser --kiosk h/home/pi/Desktop/logoChromium/web.html  # load chromium after boot and open the webs
 ```
+save then exist, go to terminal 
 
-## Additional Notes
+`rebbot`
 
-- Include any additional notes or troubleshooting tips. message me
+to do the wifi settings
 
-## Contributing
+here is the step i took to do mine.
 
-If you'd like to contribute to this project, please follow the [contributing guidelines](CONTRIBUTING.md).
+in the kisok mode press the windows button fro your key board
+select accesories-> terminal
 
-## License
+Editing wpa_supplicant.conf directly
+Open the wpa_supplicant.conf file for editing:
 
-This project is licensed under the [MIT License](LICENSE).
+```bash
+sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
 ```
+Add the following lines at the end of the file, replacing "your_SSID" and "your_password" with your Wi-Fi SSID and password:
+
+```bash
+network={
+    ssid="your_SSID"
+    psk="your_password"
+}
+```
+Save the changes (Ctrl + X, then Y, then Enter).
+
+Restart the Wi-Fi interface:
+
+```bash
+sudo ifdown wlan0
+sudo ifup wlan0
+````![Alt text](image.png)
