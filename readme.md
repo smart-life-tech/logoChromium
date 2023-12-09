@@ -65,7 +65,7 @@ save then exist, go to terminal
 
 `rebbot`
 
-to do the wifi settings
+to do the wifi settings, when its not connected to the internet
 
 here is the step i took to do mine.
 
