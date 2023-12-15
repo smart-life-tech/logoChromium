@@ -1,4 +1,5 @@
 
+pkill -f chromium-browser
 
 ```markdown
 # Raspberry Pi Splash Screen Setup
@@ -59,7 +60,7 @@ And add this to the last part :
 @xset s off
 @xset -dpms
 @xset s noblank
-@chromium-browser --kiosk h/home/pi/Desktop/logoChromium/web.html  # load chromium after boot and open the webs
+@chromium-browser --kiosk /home/theavguys3/Downloads/logoChromium/web.html  # load chromium after boot and open the webs
 ```
 save then exist, go to terminal 
 
